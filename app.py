@@ -1,5 +1,5 @@
 #from fastai.vision import open_image, load_learner, image, torch
-from fastai.vision import load_image, load_learner, image, torch
+from fastai.vision import *
 import streamlit as st
 import numpy as np
 import matplotlib.image as mpimg
@@ -48,7 +48,7 @@ if option == 'Choose a test image':
 
     # Read the image
     file_path = 'test/' + test_image
-    img = load_image(file_path)
+    img = load_image(file_path, mode=None)
     # Get the image to display
     display_img = mpimg.imread(file_path)
 
