@@ -24,8 +24,10 @@ def predict(img, display_img):
 
     # Load model and make prediction
     model = load_learner('model/my_model.pkl')
-    pred_class = model.predict(img)[0]
-    pred_prob = round(torch.max(model.predict(img)[2]).item()*100)
+    pred = model.predict(img)
+    pred_class = pred[0]
+    prob = pred[2]
+    pred_prob = round(torch.max(prob).item()*100)
 
     # Display the prediction
     if str(pred_class) == 'unicorn':
