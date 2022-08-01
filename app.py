@@ -1,5 +1,5 @@
 #from fastai.vision import open_image, load_learner, image, torch
-from fastai.vision import *
+from fastai.vision.all import *
 import streamlit as st
 import numpy as np
 import matplotlib.image as mpimg
@@ -67,8 +67,8 @@ else:
 
             # Transform the image to feed into the model
             img = pil_img.convert('RGB')
-            img = image.pil2tensor(img, np.float32).div_(255)
-            img = image.Image(img)
+            img = image2tensor(img)
+            img = Image(img)
 
             # Predict and display the image
             predict(img, display_img)
