@@ -1,5 +1,6 @@
 streamlit
 matplotlib
 numpy
-https://download.pytorch.org/whl/cpu/torch-1.11.0+cpu-cp310-cp310-linux_x86_64.whl
 fastai
+torch
+torchvision
