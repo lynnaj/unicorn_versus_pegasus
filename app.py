@@ -23,7 +23,7 @@ def predict(img, display_img):
         time.sleep(3)
 
     # Load model and make prediction
-    model = load_learner('model/')
+    model = load_learner('model/my_model.pkl')
     pred_class = model.predict(img)[0]
     pred_prob = round(torch.max(model.predict(img)[2]).item()*100)
 
@@ -66,12 +66,12 @@ else:
             display_img = np.asarray(pil_img)  # Image to display
 
             # Transform the image to feed into the model
-            img = pil_img.convert('RGB')
-            img = image2tensor(img)
-            img = Image(img)
+            #img = pil_img.convert('RGB')
+            #img = image2tensor(img)
+            #img = Image(img)
 
             # Predict and display the image
-            predict(img, display_img)
+            #predict(img, display_img)
 
         except:
             st.text("Invalid url!")
