@@ -1,4 +1,5 @@
-from fastai.vision import open_image, load_learner, image, torch
+#from fastai.vision import open_image, load_learner, image, torch
+from fastai.vision.all import *
 import streamlit as st
 import numpy as np
 import matplotlib.image as mpimg
