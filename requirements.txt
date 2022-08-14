@@ -1,6 +1,7 @@
 streamlit
 matplotlib
 numpy
-fastai
-torch
-torchvision
+fastbook == 0.0.26
+#fastai
+#torch
+#torchvision
