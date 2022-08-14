@@ -79,8 +79,8 @@ else:
             #img = PILImage.create(pil_img)
 
             # Grab some random images from the internet, and see what our model thinks it is
-            image_path = tempfile.mktemp()
-            file = wget.download(url, out=image_path)
+            #image_path = tempfile.mktemp()
+            #file = wget.download(url, out=image_path)
             #img = PILImage.create(file)
             # Predict and display the image
             #predict(img, display_img)
