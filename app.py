@@ -78,7 +78,7 @@ else:
 
             # Grab some random images from the internet, and see what our model thinks it is
             image_path = tempfile.mkstemp()
-            #file = wget.download(str(url), image_path)
+            file = wget.download(url)
             st.image(display_img, use_column_width=True)
 
             #img = PILImage.create(pil_img)
