@@ -65,22 +65,24 @@ else:
     if url != "":
         try:
             # Read image from the url
-            #response = requests.get(url)
-            #pil_img = PIL.Image.open(BytesIO(response.content))
-            # display_img = np.asarray(pil_img)  # Image to display
+            response = requests.get(url)
+            pil_img = PIL.Image.open(BytesIO(response.content))
+            display_img = np.asarray(pil_img)  # Image to display
 
             # Transform the image to feed into the model
-            #img = pil_img.convert('RGB')
-            #img = image.pil2tensor(img, np.float32).div_(255)
+            img = pil_img.convert('RGB')
+            img = image.pil2tensor(img, np.float32).div_(255)
             #img = image.Image(img)
+            img = ILImage.create(img)
 
             # Grab some random images from the internet, and see what our model thinks it is
-            images = [url]
+            #images = [url]
 
-            for image_url in images:
-                img = tempfile.mktemp()
-                # Predict and display the image
-                predict(img, display_img)
+            # for image_url in images:
+            #    img = tempfile.mktemp()
+            # Predict and display the image
+
+            predict(img, display_img)
 
         except:
             st.text("Invalid url!")
