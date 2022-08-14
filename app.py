@@ -9,6 +9,7 @@ import time
 import PIL.Image
 import requests
 from io import BytesIO
+import tempfile
 
 # App title
 st.title("Pegasus or Unicorn?")
