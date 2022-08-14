@@ -81,10 +81,7 @@ else:
             images = [url]
 
             for image_url in images:
-                image_path = tempfile.mkstemp()
-
-                print(f"* Downloading {image_url} to {image_path}...")
-
+                image_path = tempfile.NamedTemporaryFile()
                 img = PILImage.create(image_path)
                 # Predict and display the image
                 predict(img, display_img)
