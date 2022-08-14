@@ -70,7 +70,7 @@ else:
             pil_img = PIL.Image.open(BytesIO(response.content))
             display_img = np.asarray(pil_img)  # Image to display
 
-            #st.image(display_img, use_column_width=True)
+            st.image(display_img, use_column_width=True)
 
             # Transform the image to feed into the model
             #img = pil_img.convert('RGB')
@@ -82,7 +82,6 @@ else:
             image_path = tempfile.mkstemp()
             wget.download(image_url, out=image_path)
             #img = PILImage.create(image_path)
-            st.image(display_img, use_column_width=True)
             # Predict and display the image
             #predict(img, display_img)
 
