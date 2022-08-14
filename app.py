@@ -1,5 +1,6 @@
 #from fastai.vision import open_image, load_learner, image, torch
 from fastai.vision.all import *
+from fastai.data.external import *
 import streamlit as st
 import numpy as np
 import matplotlib.image as mpimg
@@ -18,15 +19,13 @@ def predict(img, display_img):
     # Display the test image
     st.image(display_img, use_column_width=True)
 
-    img_obj = PILImage.create(img)
-
     # Temporarily displays a message while executing
     with st.spinner('Wait for it...'):
         time.sleep(3)
 
     # Load model and make prediction
     model = load_learner('model/my_model.pkl')
-    pred = model.predict(img_obj)
+    pred = model.predict(img)
     pred_class = pred[0]
     prob = pred[2]
     pred_prob = round(torch.max(prob).item()*100)
@@ -52,7 +51,7 @@ if option == 'Choose a test image':
 
     # Read the image
     file_path = 'test/' + test_image
-    img = load_image(file_path, mode=None)
+    img = PILImage.create(file_path)
     # Get the image to display
     display_img = mpimg.imread(file_path)
 
@@ -67,6 +66,7 @@ else:
             # Read image from the url
             response = requests.get(url)
             pil_img = PIL.Image.open(BytesIO(response.content))
+            #pil_img = PILImage.create(BytesIO(response.content))
             display_img = np.asarray(pil_img)  # Image to display
 
             # Transform the image to feed into the model
