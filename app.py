@@ -84,7 +84,7 @@ else:
             for image_url in images:
                 image_path = tempfile.mkstemp()
                 wget.download(image_url, out=image_path)
-                img = PILImage.create(image_path)
+                #img = PILImage.create(image_path)
                 st.image(display_img, use_column_width=True)
                 # Predict and display the image
                 #predict(img, display_img)
