@@ -10,6 +10,7 @@ import PIL.Image
 import requests
 from io import BytesIO
 import tempfile
+import wget
 
 # App title
 st.title("Pegasus or Unicorn?")
@@ -78,13 +79,14 @@ else:
             #img = PILImage.create(pil_img)
 
             # Grab some random images from the internet, and see what our model thinks it is
-            #images = [url]
+            images = [url]
 
-            # for image_url in images:
-            #    image_path = tempfile.NamedTemporaryFile()
-            #    img = PILImage.create(image_path)
-            # Predict and display the image
-            predict(pil_img, display_img)
+            for image_url in images:
+                image_path = tempfile.mkstemp()
+                wget.download(image_url, out=image_path)
+                img = PILImage.create(image_path)
+                # Predict and display the image
+                predict(img, display_img)
 
         except:
             st.text("Invalid url!")

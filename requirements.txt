@@ -2,6 +2,7 @@ streamlit
 matplotlib
 numpy
 fastbook == 0.0.26
+wget
 #fastai
 #torch
 #torchvision
