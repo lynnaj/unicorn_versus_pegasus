@@ -66,13 +66,12 @@ else:
             # Read image from the url
             response = requests.get(url)
             pil_img = PIL.Image.open(BytesIO(response.content))
-            #pil_img = PILImage.create(BytesIO(response.content))
             display_img = np.asarray(pil_img)  # Image to display
 
             # Transform the image to feed into the model
             img = pil_img.convert('RGB')
-            img = image2tensor(img)
-            img = Image(img)
+            img = image.pil2tensor(img, np.float32).div_(255)
+            img = image.Image(img)
 
             # Predict and display the image
             predict(img, display_img)
