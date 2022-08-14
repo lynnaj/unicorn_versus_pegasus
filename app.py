@@ -81,10 +81,9 @@ else:
             images = [url]
 
             for image_url in images:
-                image_path = tempfile.mktemp()
+                image_path = tempfile.mkstemp()
 
                 print(f"* Downloading {image_url} to {image_path}...")
-                ! wget - q - -show-progress - O "$image_path" "$image_url"
 
                 img = PILImage.create(image_path)
                 # Predict and display the image
