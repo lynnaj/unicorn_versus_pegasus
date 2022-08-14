@@ -72,10 +72,10 @@ else:
             #st.image(display_img, use_column_width=True)
 
             # Transform the image to feed into the model
-            img = pil_img.convert('RGB')
+            #img = pil_img.convert('RGB')
             #img = image.pil2tensor(img, np.float32).div_(255)
             #img = image.Image(img)
-            img = PILImage.create(img)
+            img = PILImage.create(pil_img)
 
             # Grab some random images from the internet, and see what our model thinks it is
             #images = [url]
