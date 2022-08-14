@@ -68,11 +68,13 @@ else:
             pil_img = PIL.Image.open(BytesIO(response.content))
             display_img = np.asarray(pil_img)  # Image to display
 
+            st.image(display_img, use_column_width=True)
+
             # Transform the image to feed into the model
-            img = pil_img.convert('RGB')
-            img = image.pil2tensor(img, np.float32).div_(255)
+            #img = pil_img.convert('RGB')
+            #img = image.pil2tensor(img, np.float32).div_(255)
             #img = image.Image(img)
-            img = PILImage.create(img)
+            #img = PILImage.create(img)
 
             # Grab some random images from the internet, and see what our model thinks it is
             #images = [url]
@@ -81,7 +83,7 @@ else:
             #    img = tempfile.mktemp()
             # Predict and display the image
 
-            predict(img, display_img)
+            #predict(img, display_img)
 
         except:
             st.text("Invalid url!")
