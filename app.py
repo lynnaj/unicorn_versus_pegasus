@@ -81,7 +81,7 @@ else:
             #get.download(url, out=image_path)
             st.image(display_img, use_column_width=True)
 
-            #img = PILImage.create(file)
+            img = PILImage.create(pil_img)
             # Predict and display the image
             #predict(img, display_img)
 
