@@ -70,12 +70,12 @@ else:
             display_img = np.asarray(pil_img)  # Image to display
 
             # Transform the image to feed into the model
-            #img = pil_img.convert('RGB')
-            #img = image2tensor(img)
-            #img = Image(img)
+            img = pil_img.convert('RGB')
+            img = image2tensor(img)
+            img = Image(img)
 
             # Predict and display the image
-            #predict(img, display_img)
+            predict(img, display_img)
 
         except:
             st.text("Invalid url!")
