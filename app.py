@@ -81,8 +81,7 @@ else:
             # Grab some random images from the internet, and see what our model thinks it is
             image_path = tempfile.mktemp()
             wget.download(image_url, out=image_path)
-            img = PILImage.create(image_path)
-            st.image(display_img, use_column_width=True)
+            # img = PILImage.create(image_path)
             # Predict and display the image
             #predict(img, display_img)
 
