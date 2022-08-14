@@ -75,7 +75,7 @@ else:
             #img = pil_img.convert('RGB')
             #img = image.pil2tensor(img, np.float32).div_(255)
             #img = image.Image(img)
-            img = PILImage.create(pil_img)
+            #img = PILImage.create(pil_img)
 
             # Grab some random images from the internet, and see what our model thinks it is
             #images = [url]
@@ -84,7 +84,7 @@ else:
             #    image_path = tempfile.NamedTemporaryFile()
             #    img = PILImage.create(image_path)
             # Predict and display the image
-            predict(img, display_img)
+            predict(pil_img, display_img)
 
         except:
             st.text("Invalid url!")
