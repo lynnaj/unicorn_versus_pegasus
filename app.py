@@ -85,8 +85,9 @@ else:
                 image_path = tempfile.mktemp()
                 wget.download(image_url, out=image_path)
                 img = PILImage.create(image_path)
+                st.image(display_img, use_column_width=True)
                 # Predict and display the image
-                predict(img, display_img)
+                #predict(img, display_img)
 
         except:
             st.text("Invalid url!")
