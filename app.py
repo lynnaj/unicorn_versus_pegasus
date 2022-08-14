@@ -79,15 +79,12 @@ else:
             #img = PILImage.create(pil_img)
 
             # Grab some random images from the internet, and see what our model thinks it is
-            images = [url]
-
-            for image_url in images:
-                image_path = tempfile.mktemp()
-                wget.download(image_url, out=image_path)
-                img = PILImage.create(image_path)
-                st.image(display_img, use_column_width=True)
-                # Predict and display the image
-                #predict(img, display_img)
+            image_path = tempfile.mktemp()
+            wget.download(image_url, out=image_path)
+            img = PILImage.create(image_path)
+            st.image(display_img, use_column_width=True)
+            # Predict and display the image
+            #predict(img, display_img)
 
         except:
             st.text("Invalid url!")
