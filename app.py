@@ -81,7 +81,7 @@ else:
             #    img = tempfile.mktemp()
             # Predict and display the image
 
-            #predict(img, display_img)
+            predict(img, display_img)
 
         except:
             st.text("Invalid url!")
