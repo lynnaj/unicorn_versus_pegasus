@@ -70,7 +70,7 @@ else:
             pil_img = PIL.Image.open(BytesIO(response.content))
             display_img = np.asarray(pil_img)  # Image to display
 
-            #st.image(display_img, use_column_width=True)
+            st.image(display_img, use_column_width=True)
 
             # Transform the image to feed into the model
             #img = pil_img.convert('RGB')
@@ -80,8 +80,8 @@ else:
 
             # Grab some random images from the internet, and see what our model thinks it is
             image_path = tempfile.mktemp()
-            wget.download(url, out=image_path)
-            st.image(display_img, use_column_width=True)
+            #wget.download(url, out=image_path)
+
             # img = PILImage.create(image_path)
             # Predict and display the image
             #predict(img, display_img)
