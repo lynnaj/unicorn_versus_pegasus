@@ -18,13 +18,15 @@ def predict(img, display_img):
     # Display the test image
     st.image(display_img, use_column_width=True)
 
+    img_obj = PILImage.create(img)
+
     # Temporarily displays a message while executing
     with st.spinner('Wait for it...'):
         time.sleep(3)
 
     # Load model and make prediction
     model = load_learner('model/my_model.pkl')
-    pred = model.predict(img)
+    pred = model.predict(img_obj)
     pred_class = pred[0]
     prob = pred[2]
     pred_prob = round(torch.max(prob).item()*100)
